@@ -29,6 +29,8 @@ text: <p>Second text with <span data-color="#c14242">another color highlight</sp
 
 ### Production build & deploy
 
+0. quit devserver using `CTRL+C`
+
 1. Compile the JavaScript for deployment
 ```
     npm run build
