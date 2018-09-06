@@ -24,7 +24,8 @@ text: <p>Second text with <span data-color="#c14242">another color highlight</sp
     npm install
     npm run devserver
 ```
-5. if you have multiple scrollsections, copy-paste the `qvv_scrollsection` subtree and change `data-steps` to match the archieml key
+
+5. if you have multiple scrollsections, change `index.html` by copy-pasting the `qvv_scrollsection` subtree and changing `data-steps` to match the archieml key
 
 ### Production build & deploy
 
