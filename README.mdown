@@ -1,0 +1,57 @@
+Based on: [https://paulkogel.github.io/simple-babel-webpack-template](https://paulkogel.github.io/simple-babel-webpack-template)
+
+### Setup
+
+1. create a link-public google doc with contents like
+
+```
+[steps_scrollsection]
+graph: img:filename1.png
+text: <p>Text 1 with <span data-color="#c14242">red color highlight</span>.</p>
+:end
+
+graph: img:filename2.png
+text: <p>Second text with <span data-color="#c14242">another color highlight</span>.</p>
+:end
+```
+
+2. put the image files in `dist/images`, *make sure to also include a version which includes `_mobile` in front of the `.png`*.
+
+3. update download link in `download_archie.bash` and execute `bash download_archie.bash` in the directory, check `src/steps.archieml`
+
+4. install prerequisites & start development server
+
+    npm install
+    npm run devserver
+
+5. if you have multiple scrollsections, copy-paste the `qvv_scrollsection` subtree and change `data-steps` to match the archieml key
+
+### Production build & deploy
+
+1. Compile the JavaScript for deployment
+
+    npm run build
+
+Check `dist/js` for output:
++ `application.js` (transpiled source code)
++ `application.js.map` (source map)
+
+
+2. upload the whole `dist` folder to somewhere
+
+3. embed the following code for each scroll section (change data-steps if neccessary)
+
+```
+<div class="qvv_scrollsection" data-steps="steps_scrollsection">
+  <div class="container">
+    <div class="graphcontainer">
+      <div class="graph"></div>
+    </div>
+    <div class="sections"></div>
+  </div>
+</div>
+```
+
+4. under the last scrollsection, embed (fix the path!)
+
+    <script src="scripttag.js"></script>

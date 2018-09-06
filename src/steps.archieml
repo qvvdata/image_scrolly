@@ -1,0 +1,8 @@
+[steps_scrollsection]
+graph: img:filename1.png
+text: <p>Text 1 with <span data-color="#c14242">red color highlight</span>.</p>
+:end
+
+graph: img:filename2.png
+text: <p>Second text with <span data-color="#c14242">another color highlight</span>.</p>
+:end

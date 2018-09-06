@@ -1,0 +1,95 @@
+.qvv_scrollsection .container{
+  position: relative;
+  margin-bottom: 60vh;
+  border-bottom: 120px solid transparent;
+  z-index: -1;
+}
+.qvv_scrollsection {
+  padding-bottom: 120px;
+  margin-top: -120px;
+}
+
+.qvv_scrollsection .sections{
+  min-width: 250px;
+  border-top: 120px solid transparent;
+}
+
+.qvv_scrollsection .sections > div {
+  padding-top: 10vh;
+  padding-bottom: 55vh;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.25;
+  background: rgba(255,255,255,0)
+}
+
+.qvv_scrollsection .sections > div:last-child {
+  padding-bottom: 0;
+}
+
+.qvv_scrollsection .sections > div.graph-scroll-active {
+  opacity: 1;
+  transition: opacity background 1s;
+}
+
+.qvv_scrollsection .sections {
+  position: relative;
+  padding-top: 65vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.qvv_scrollsection .graphcontainer{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+.qvv_scrollsection .graph-scroll-fixed .graphcontainer {
+  position: fixed;
+}
+.qvv_scrollsection .graph-scroll-below .graphcontainer {
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  margin-bottom: -120px;
+}
+
+.qvv_scrollsection .graphcontainer img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.qvv_scrollsection .graphcontainer .imgcontainer {
+  width: 100%;
+  height: 65vh;
+  position: absolute;
+  text-align: center;
+  top: 120px;
+}
+
+.qvv_scrollsection .graphcontainer .graph {
+  position: absolute;
+  top: 0;
+}
+.qvv_scrollsection .textwrapper {
+  background: rgba(255,255,255,0.7);
+  padding: 3px 10px ;
+}
+
+@media screen and (max-width: 520px) , screen and (max-height:600px)  {
+  .qvv_scrollsection .sections{
+    position: relative;
+    padding-top: 40vh;
+  }
+  .qvv_scrollsection .sections > div {
+    padding-top: 10vh;
+    padding-bottom: 35vh;
+  }
+  .qvv_scrollsection .graphcontainer .imgcontainer, .graphcontainer .graph {
+    height: 40vh;
+  }
+  .qvv_scrollsection .container {
+    margin-bottom: 40vh;
+  }
+}
