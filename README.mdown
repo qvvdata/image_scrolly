@@ -20,18 +20,18 @@ text: <p>Second text with <span data-color="#c14242">another color highlight</sp
 3. update download link in `download_archie.bash` and execute `bash download_archie.bash` in the directory, check `src/steps.archieml`
 
 4. install prerequisites & start development server
-
+```
     npm install
     npm run devserver
-
+```
 5. if you have multiple scrollsections, copy-paste the `qvv_scrollsection` subtree and change `data-steps` to match the archieml key
 
 ### Production build & deploy
 
 1. Compile the JavaScript for deployment
-
+```
     npm run build
-
+```
 Check `dist/js` for output:
 + `application.js` (transpiled source code)
 + `application.js.map` (source map)
@@ -53,5 +53,6 @@ Check `dist/js` for output:
 ```
 
 4. under the last scrollsection, embed (fix the path!)
-
+```
     <script src="scripttag.js"></script>
+```
