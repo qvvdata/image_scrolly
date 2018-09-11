@@ -7,18 +7,17 @@ var parents = d3.selectAll('.qvv_scrollsection');
 
 import * as config from './steps.archieml';
 
-
-var img_prefix = document.location.hostname=='localhost'?'./images/':'https://data.addendum.org/gfx/2018-monogamie/scrolly/images/';
-
-function img_url_transform(url) {
-  return img_prefix+url.replace(/^img:/,'').trim().replace('.png', window.innerWidth<590?'_mobile.png':'.png')
-}
-
 var preload_i = 0;
 
 parents.each(function(x)  {
   var parent = d3.select(this);
   var steps = config[parent.attr('data-steps')];
+
+  var img_prefix = parent.attr('data-image-prefix');
+
+  function img_url_transform(url) {
+    return img_prefix+url.replace(/^img:/,'').trim().replace('.png', window.innerWidth<590?'_mobile.png':'.png')
+  }
 
   parent.select('.container .sections')
     .selectAll('div')
