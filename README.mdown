@@ -42,10 +42,10 @@ Check `dist/js` for output:
 
 2. upload the whole `dist` folder to somewhere
 
-3. embed the following code for each scroll section (change data-steps if neccessary)
+3. embed the following code for each scroll section (change data-steps if neccessary and data-image-prefix to the absolute url of the image folder, like `https://data.addendum.org/gfx/20xx-yyy-zzz/scrolly/images`)
 
 ```
-<div class="qvv_scrollsection" data-steps="steps_scrollsection">
+<div class="qvv_scrollsection" data-steps="steps_scrollsection" data-image-prefix="your-path-here">
   <div class="container">
     <div class="graphcontainer">
       <div class="graph"></div>
