@@ -1,6 +1,6 @@
 .qvv_scrollsection .container{
   position: relative;
-  margin-bottom: 60vh;
+  margin-bottom: 65vh;
   border-bottom: 120px solid transparent;
   z-index: -1;
 }
@@ -91,5 +91,22 @@
   }
   .qvv_scrollsection .container {
     margin-bottom: 40vh;
+    border-bottom: 60px solid transparent;
+  }
+  .qvv_scrollsection .graphcontainer .imgcontainer {
+    top: 60px;
+  }
+  .qvv_scrollsection .sections{
+    border-top: 60px solid transparent;
+  }
+  .qvv_scrollsection .graph-scroll-below .graphcontainer {
+    margin-bottom: -60px;
+  }
+  .qvv_scrollsection .sections{
+    border-top: 60px solid transparent;
+  }
+  .qvv_scrollsection {
+    padding-bottom: 60px;
+    margin-top: -60px;
   }
 }

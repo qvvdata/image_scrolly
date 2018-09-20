@@ -16,7 +16,9 @@ parents.each(function(x)  {
   var img_prefix = parent.attr('data-image-prefix');
 
   function img_url_transform(url) {
-    return img_prefix+url.replace(/^img:/,'').trim().replace('.png', window.innerWidth<590?'_mobile.png':'.png')
+    return img_prefix+url.replace(/^img:/,'').trim()
+      .replace('.png', window.innerWidth<500?'_500.png':(
+      window.innerWidth<1000?'_1000.png':'_2000.png'))
   }
 
   parent.select('.container .sections')
@@ -33,13 +35,15 @@ parents.each(function(x)  {
 	  </div>`)
 
   steps.map(function(s) {
-	if(s.graph.indexOf('img:')==0) {
-	  preload_i++;
-	  setTimeout(function(x) {
-		var img = new Image();
-	   img.src = x }.bind(this, img_url_transform(s.graph)), 250*preload_i);
-	}
+  	if(s.graph.indexOf('img:')==0) {
+  	  preload_i++;
+  	  setTimeout(function(x) {
+  		var img = new Image();
+  	   img.src = x }.bind(this, img_url_transform(s.graph)), 250*preload_i);
+  	}
   })
+
+  var last_i = -1;
 
   var gs = graphScroll()
     .graph(parent.select('.graphcontainer'))
@@ -49,15 +53,16 @@ parents.each(function(x)  {
     .on('active', (i) => {
       var graph = steps[i].graph;
 
-      parent.selectAll('.graphcontainer div.imgcontainer').transition().style('opacity', 1).remove();
+      parent.selectAll('.graphcontainer div.imgcontainer').transition().duration(2000).style('opacity', i>last_i?1:0).remove();
 
       if(graph.indexOf('img:')==0) {
         parent.select('.graph').style('opacity', 0)
         var img = parent.select('.graphcontainer').append('div').attr('class','imgcontainer')
           .append('img').attr('class', 'step').style('opacity', 0);
         img.attr('src', img_url_transform(graph))
-          .transition().style('opacity', 1);
+          .transition().duration(2000).style('opacity', 1);
       }
+      last_i = i;
     });
 
   setInterval(gs.resize, 1500);
