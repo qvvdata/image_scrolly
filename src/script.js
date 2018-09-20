@@ -16,9 +16,7 @@ parents.each(function(x)  {
   var img_prefix = parent.attr('data-image-prefix');
 
   function img_url_transform(url) {
-    return img_prefix+url.replace(/^img:/,'').trim()
-      .replace('.png', window.innerWidth<500?'_500.png':(
-      window.innerWidth<1000?'_1000.png':'_2000.png'))
+    return img_prefix+url.replace(/^img:/,'').trim().replace('.png', window.innerWidth<590?'_mobile.png':'.png');
   }
 
   parent.select('.container .sections')
